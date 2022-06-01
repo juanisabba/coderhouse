@@ -1,0 +1,98 @@
+<%- include("./partials/head.ejs")%>
+<style>
+    *{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .add-products, .add-messages{
+        background-color: turquoise;
+        padding: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+
+    .add-messages input{
+        width: 200px;
+        height: 25px;
+        margin: 5px;
+        padding: 5px 10px;
+    }
+    .add-messages button{
+        width: 225px;
+        height: 25px;
+        margin: 5px;
+        margin-bottom: 20px;
+        padding: 5px 10px;
+    }
+
+    .form input{
+        width: 200px;
+        height: 25px;
+        margin: 5px;
+        padding: 5px 10px;
+    }
+    .form button{
+        width: 225px;
+        height: 25px;
+        margin: 5px;
+        margin-bottom: 20px;
+        padding: 5px 10px;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form div{
+     padding: 10px;   
+    }
+
+    th{
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        width: 200px;
+    }
+    th, tr{
+        background-color: rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 200px;
+    }
+
+    #chatContainer{
+        background-color: rgb(221, 221, 221);
+        padding: 10px;
+    }
+
+</style>
+
+    <body>
+        <div class="container">
+            <div class="add-products">
+                <h1>Ingrese Productos</h1>
+                <form class="form" id="datosProductos" action="post" method="">
+                        <input placeholder="Nombre" id="nombreProducto" type="text" name="name" required
+                            >
+                        <input placeholder="Precio" id="precioProducto" name="price" type="number" name="price" required
+                            >
+                        <input placeholder="Imagen" id="imgProducto" type="text" name="img" required
+                             >
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <%- include("./partials/tablaProductos.ejs")%>
+            <%- include("./partials/chat.ejs")%>
+        <%- include("./partials/footer.ejs")%>
+        </div>
